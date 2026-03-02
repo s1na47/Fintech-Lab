@@ -1,0 +1,12 @@
+version: '3.8'
+
+services:
+  # This is the name of your microservice
+  ticker:
+    build: .
+    image: btc-ticker:latest
+    container_name: btc_live_feed
+    # This solves all the networking issues we had tonight automatically
+    network_mode: "host"
+    # This ensures the bot restarts if your laptop crashes or the API blips
+    restart: always
