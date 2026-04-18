@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  # The Database we've been using
+  db:
+    image: postgres
+    container_name: fintech-db
+    environment:
+      POSTGRES_PASSWORD: password123
+    ports:
+      - "5432:5432"
+    restart: always
+
+  # Your New Price Bot
+  price-bot:
+    build: .
+    container_name: btc-price-bot
+    depends_on:
+      - db
+    environment:
+      # We tell the bot to look for 'db', not '127.0.0.1'
+      DB_HOST: db
+    restart: always
+    
