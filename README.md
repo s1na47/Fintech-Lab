@@ -37,5 +37,5 @@ A fully containerized microservice architecture that automates the ingestion of 
 ---
 
 ## 📬 Connect with Me
-*   **GitHub:** [https://github.com/47s1na](https://github.com/47s1na)
+*   **GitHub:** [https://github.com/s1na47](https://github.com/s1na47)
 *   **LinkedIn:** [www.linkedin.com/in/anis-ahmed-tech]
