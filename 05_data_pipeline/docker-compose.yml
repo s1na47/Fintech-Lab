@@ -1,7 +1,4 @@
-version: '3.8'
-
 services:
-  # The Database we've been using
   db:
     image: postgres
     container_name: fintech-db
@@ -11,14 +8,14 @@ services:
       - "5432:5432"
     restart: always
 
-  # Your New Price Bot
   price-bot:
     build: .
     container_name: btc-price-bot
     depends_on:
       - db
     environment:
-      # We tell the bot to look for 'db', not '127.0.0.1'
-      DB_HOST: db
+      - DB_HOST=db
+      - AWS_ACCESS_KEY_ID=${AWS_ACCESS_KEY_ID}
+      - AWS_SECRET_ACCESS_KEY=${AWS_SECRET_ACCESS_KEY}
+      - AWS_DEFAULT_REGION=eu-west-2
     restart: always
-    
